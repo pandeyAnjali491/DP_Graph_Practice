@@ -1,18 +1,18 @@
 package backtracking;
 
 public class permutation {
-    public static void permut(String s,String res){
-        if(s.length()==0) {
+    public static void permut(String s,int pos,String res){
+        if(pos==0) {
             System.out.println(res);
             return;
         }
         for(int j=0;j<s.length();j++){
             String rem = s.substring(0, j)+s.substring(j+1);
-            permut(rem, res+s.charAt(j));
+            permut(rem,pos-1,res+s.charAt(j));
         }
     }
     public static void main(String[] args) {
-        String s ="ABC";
-        permut(s, "");
+        String s ="abc";
+        permut(s,s.length(), "");
     }
 }

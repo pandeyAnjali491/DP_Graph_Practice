@@ -1,9 +1,13 @@
 package backtracking;
 
 public class powerSet {
+    // print all subsets(powerset=all subsets)
     public static void printSet(String org,int i,String res){
         if(i==org.length()) {
-            System.out.println(res);
+            if (res.length()==0) {
+                System.out.println("empty");
+            }
+            else System.out.println(res);
             return;
         }
         // if yes
@@ -12,7 +16,7 @@ public class powerSet {
         printSet(org, i+1, res);
     }
     public static void main(String[] args) {
-        String s = "122";
+        String s = "abc";
         printSet(s, 0, "");
     }
 }
